@@ -1,0 +1,11 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-dark-gray: #404040;
+    --color-light-gray: #C4C4C4;
+
+    --font-heebo: "Heebo", sans-serif;
+    --font-back-words: "Yantramanav", sans-serif;
+
+    --btn-radius: 30px;
+
+}
