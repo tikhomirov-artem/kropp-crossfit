@@ -1,11 +1,200 @@
 :root {
-    --color-white: #FFFFFF;
+    /*ПЕРЕМЕННЫЕ ОСНОВНОЙ ПАЛИТРЫ*/
+    --color-dark: #000;
+    --color-dark-blue: #131619;
+    --color-white: #ffffff;
     --color-dark-gray: #404040;
-    --color-light-gray: #C4C4C4;
+    --color-light-gray: #c4c4c4;
 
+    /*ОСНОВНЫЕ ШРИФТЫ*/
     --font-heebo: "Heebo", sans-serif;
     --font-back-words: "Yantramanav", sans-serif;
 
+    /*ОСНОВНЫЕ СКРУГЛЕНИЯ, ГРАНИЦЫ И ВЫСОТЫ КНОПОК*/
     --btn-radius: 30px;
+    --btn-height: 54px;
+    --border: 1px solid var(--color-white);
 
+    /*ПОВТОРЯЮЩИЕСЯ РАЗМЕРЫ ШРИФТОВ*/
+    --fs-m: 12px;
+
+    /*ЗНАЧЕНИЯ КОНТЕНТНОГО КОНТЕЙНЕРА*/
+    --container-width: 1300px;
+    --container-padding-x: 15px;
+
+    /*ОПТИМАЛЬНАЯ СКОРОСТЬ ПЕРЕХОДОВ*/
+    --transition-duration: 0.3s;
+}
+
+.d-flex {
+    display: flex;
+}
+.al-center {
+    align-items: center;
+}
+.jc-center {
+    justify-content: center;
+}
+.jc-between {
+    justify-content: space-between;
+}
+.f-column {
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--color-dark-blue);
+
+    /*СТИЛИ ОСНОВНОГО ТЕКСТА*/
+    color: var(--color-light-gray);
+    font-family: var(--font-heebo);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+/*КОНТЕНТНЫЙ КОНТЕЙНЕР*/
+.container {
+    max-width: calc(var(--container-padding-x) + var(--container-padding-x) * 2);
+    padding-inline: var(--container-padding-x);
+    margin-inline: auto;
+}
+
+/*СКОРОСТЬ ПЕРЕХОДОВ ДЛЯ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ*/
+a,
+input,
+button,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*Визуальное сокрытие элемента с сохранением доступности*/
+.v-hidden {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip-path: inset(100%) !important;
+}
+
+button {
+    white-space: nowrap;
+}
+
+.button {
+    border-radius: var(--btn-radius);
+    height: var(--btn-height);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--fs-m);
+    font-weight: 700;
+    line-height: 2;
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 26px;
+}
+.button:hover {
+    background-color: var(--color-light-gray);
+}
+.header {
+    padding: 16px 32px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.header-logo {
+    align-items: center;
+    flex-shrink: 0;
+}
+.header-menu-link {
+    padding-block: 20px;
+    align-items: center;
+    font-weight: 700;
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-decoration: none;
+    gap: 8px;
+    font-size: var(--fs-m);
+    letter-spacing: 1.2px;
+}
+.header-menu-link:hover {
+    color: var(--color-light-gray);
+}
+
+.header-menu-link.active::after {
+    content: "";
+    background-color: currentColor;
+    border-radius: 50%;
+    width: 5px;
+    aspect-ratio: 1 / 1; /*Соотношение ширины и высоты*/
+}
+.header-menu-list {
+    column-gap: 60px;
+    flex-wrap: wrap;
+}
+.header-actions {
+    display: flex;
+    column-gap: 40px;
+}
+.header-book-button {
+    height: 38px;
+}
+
+.header-burger-button {
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    color: var(--color-white);
+    background-color: transparent;
+    padding-inline: 10px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    align-items: unset;
+    row-gap: 5px;
+}
+.header-burger-button:hover {
+    color: var(--color-light-gray);
+}
+.header-burger-button span {
+    height: 1px;
+    width: 6px;
+    box-shadow: 12px 0 0 currentColor;
+    background-color: currentColor;
+}
+
+@media (max-width: 1000px) {
+    .header {
+        row-gap: 15px;
+        padding-inline: 15px;
+    }
+    .header-logo img {
+        width: 80px;
+    }
+    .header-menu {
+        flex-basis: 100%;
+        order: 1;
+    }
+    .header-menu-list {
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .header-menu-link {
+        padding-block: 10px;
+    }
+    .header-actions {
+        gap: 15px;
+    }
 }

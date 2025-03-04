@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>kropp-crossfit</title>
 </head>
+
 <body>
-    
+    <header class="header d-flex jc-between">
+        <a href="" class="header-logo">
+            <img src="imgs/logo.png" alt="kropp-logo" width="135" height="24" loading="lazy">
+        </a>
+        <nav class="header-menu">
+            <ul class="header-menu-list d-flex">
+                <li class="header-menu-item"><a href="/" class="header-menu-link active">home</a></li>
+                <li class="header-menu-item"><a href="/" class="header-menu-link">pages</a></li>
+                <li class="header-menu-item"><a href="/" class="header-menu-link">portfolio</a></li>
+                <li class="header-menu-item"><a href="/" class="header-menu-link">blog</a></li>
+                <li class="header-menu-item"><a href="/" class="header-menu-link">shop</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions d-flex al-center">
+            <button type="button" class="header-book-button button">
+                book now
+            </button>
+            <button title="Open Menu" type="button" class="header-burger-button f-column d-flex jc-center">
+                <span class="v-hidden">Open menu</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 </body>
+
 </html>
