@@ -25,6 +25,7 @@
 
     /*ЗНАЧЕНИЯ КОНТЕНТНОГО КОНТЕЙНЕРА*/
     --container-width: 1300px;
+    --big-container-width: 1920px;
     --container-padding-x: 15px;
 
     /*ОПТИМАЛЬНАЯ СКОРОСТЬ ПЕРЕХОДОВ*/
@@ -53,15 +54,22 @@ body {
     /*СТИЛИ ОСНОВНОГО ТЕКСТА*/
     color: var(--color-light-gray);
     font-family: var(--font-heebo);
-    font-size: 16px;
+    font-size: var(--fs-l);
     line-height: 1.75;
 }
 
 /*КОНТЕНТНЫЙ КОНТЕЙНЕР*/
-.container {
-    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+
+.container,
+.big-container {
     padding-inline: var(--container-padding-x);
     margin-inline: auto;
+}
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+}
+.big-container {
+    max-width: calc(var(--big-container-width) + var(--container-padding-x) * 2);
 }
 
 /*СКОРОСТЬ ПЕРЕХОДОВ ДЛЯ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ*/
@@ -122,7 +130,7 @@ button {
     color: var(--color-white);
     border: 1px solid currentColor;
     padding-right: 80px;
-    background-color: transparent; 
+    background-color: transparent;
     position: relative;
 }
 .button.transparent::after {
@@ -147,7 +155,7 @@ button {
     background-color: var(--color-light-gray);
 }
 .title-m {
-    font-size: var(--fs-title-m);
+    font-size: clamp(20px, 2.08vw, var(--fs-title-m));
     line-height: 1.3;
     margin-bottom: 15px;
 }
@@ -270,7 +278,7 @@ button {
     z-index: 2;
 }
 .backdrop-title::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     right: calc(100% + 8px);
@@ -289,6 +297,15 @@ button {
     z-index: -1;
     top: -0.5em;
     left: -0.6em;
+}
+@media (max-width: 1200px) {
+    .motivation-card img {
+        width: 40%;
+        margin-block: -30px;
+    }
+    .backdrop-title::before {
+        height: 20px;
+    }
 }
 @media (max-width: 1000px) {
     .header {
@@ -323,7 +340,34 @@ button {
         column-gap: 15px;
     }
 }
+@media (max-width: 900px) {
+    .motivation-card img {
+        width: 30%;
+        margin-block: 0;
+    }
+}
+@media (max-width: 750px) {
+    .motivation-card,
+    .motivation-item:nth-child(even) .motivation-card {
+        flex-direction: column-reverse;
+    }
+    .motivation-card-content {
+        padding-block: 0;
+    }
+    .motivation-card {
+        row-gap: 40px;
+    }
+    .motivation-item {
+        padding-block: 40px;
+    }
+    .motivation-card img {
+        width: 60%;
+    }
+}
 @media (max-width: 450px) {
+    .motivation-card img {
+        width: 80%;
+    }
     .welcome {
         padding-inline: 15px;
         padding-bottom: 7vh;
