@@ -500,13 +500,14 @@ button {
 
 .family-gallery {
     padding-inline: unset;
-    display: flex;
-    column-gap: clamp(15px, 1.35vw, 27px)
-}
-.family-img {
-    scroll-snap-align: start;
+    /* display: flex;
+    column-gap: clamp(15px, 1.35vw, 27px) */
 }
 
+.family-gallery .family-gallery-slide {
+    max-width: fit-content;
+    height: auto;
+}
 
 @media (max-width: 1350px) {
     .training-types-list {
@@ -519,6 +520,10 @@ button {
     .training-types-item:nth-child(2),
     .training-types-item:nth-child(5) {
         justify-self: center;
+    }
+    .family-img {
+        height: clamp(200px, 30vw, 479px);
+        width: auto;
     }
 }
 @media (max-width: 1200px) {
@@ -625,6 +630,9 @@ button {
     }
     .title-l + div {
         font-size: 18px;
+    }
+    .family-header {
+        padding-block: 65px;
     }
 }
 @media (max-width: 750px) {
