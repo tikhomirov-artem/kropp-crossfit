@@ -205,6 +205,11 @@ button {
     font-size: clamp(20px, 3.12vw, var(--fs-title-l));
     line-height: 1.2;
 }
+
+.title-l:not(:last-child) {
+    margin-bottom: 0.4em;
+}
+
 .title-l + div {
     font-size: 20px;
     text-transform: uppercase;
@@ -241,6 +246,10 @@ button {
     left: 50%;
     top: 50%;
     translate: -50% -50%;
+}
+
+.description-text {
+    margin-bottom: 37px;
 }
 
 /*ШАПКА*/
@@ -356,7 +365,6 @@ button {
 }
 .motivation-card-text {
     max-width: 400px;
-    margin-bottom: 30px;
     letter-spacing: 0.8px;
 }
 
@@ -442,7 +450,6 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 7px;
     margin-bottom: 50px;
 }
 .join-us-form-header-text {
@@ -454,6 +461,52 @@ button {
     justify-content: center;
     gap: 20px;
 }
+
+/*СЕКЦИЯ LOCATION*/
+.location {
+    display: flex;
+    padding-inline: 0;
+    background-color: var(--color-dark);
+}
+.location-map, .location-content {
+    flex-basis: 50%;
+}
+.location-map {
+    height: clamp(450px, 31vw, 600px)
+}
+.location-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+}
+
+.location-description {
+    max-width: 430px;
+}
+
+/*СЕКЦИЯ FAMILY*/
+.family-header {
+    padding-top: 130px;
+    padding-bottom: 65px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.family-gallery {
+    padding-inline: unset;
+    display: flex;
+    column-gap: clamp(15px, 1.35vw, 27px)
+}
+.family-img {
+    scroll-snap-align: start;
+}
+
 
 @media (max-width: 1350px) {
     .training-types-list {
@@ -484,6 +537,12 @@ button {
     }
     .join-us-video {
         max-width: 100%;
+    }
+    .location-map {
+        height: clamp(320px, 34.5vw, 450px)
+    }
+    .location-content {
+        padding: 40px;
     }
 }
 @media (max-width: 1000px) {
@@ -526,6 +585,19 @@ button {
     .training-types-item:nth-child(2),
     .training-types-item:nth-child(5) {
         justify-self: unset;
+    }
+    .location {
+        flex-direction: column-reverse;
+    }
+    .location-content, .location-map {
+        flex-basis: unset;
+    }
+    .location-content {
+        padding: 100px 20px;
+    }
+    .location-map {
+        width: 100%;
+        height: clamp(250px, 50vw, 600px);
     }
 }
 @media (max-width: 900px) {
