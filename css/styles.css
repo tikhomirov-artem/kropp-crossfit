@@ -182,18 +182,17 @@ button {
     height: var(--btn-height);
     border-radius: var(--btn-radius);
     color: var(--color-light-gray);
-    border: 1px solid currentColor;
-    max-width: 400px;
+    border: 1px solid var(--color-dark-gray);
     width: 100%;
     background-color: transparent;
 }
 .input:focus {
-    color: var(--color-white)
+    color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
 }
 .input::placeholder {
-    color: var(--color-light-gray)
+    color: var(--color-light-gray);
 }
-
 
 /*ЗАГОЛОВКИ*/
 .title-m {
@@ -461,18 +460,21 @@ button {
     justify-content: center;
     gap: 20px;
 }
-
+.join-us-form-input {
+    max-width: 400px;
+}
 /*СЕКЦИЯ LOCATION*/
 .location {
     display: flex;
     padding-inline: 0;
     background-color: var(--color-dark);
 }
-.location-map, .location-content {
+.location-map,
+.location-content {
     flex-basis: 50%;
 }
 .location-map {
-    height: clamp(450px, 31vw, 600px)
+    height: clamp(450px, 31vw, 600px);
 }
 .location-content {
     display: flex;
@@ -496,17 +498,102 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
+}
 
 .family-gallery {
     padding-inline: unset;
-    /* display: flex;
-    column-gap: clamp(15px, 1.35vw, 27px) */
 }
 
 .family-gallery .family-gallery-slide {
     max-width: fit-content;
     height: auto;
+}
+
+/*СЕКЦИЯ CALCULATE*/
+.calculate {
+    padding-block: 146px;
+}
+.calculate-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 36px;
+}
+.calculate-body,
+.calculate-table-wrapper {
+    flex-grow: 1;
+}
+.calculate-body {
+    max-width: 628px;
+    padding-left: 40px;
+}
+
+.calculate-description {
+    max-width: 385px;
+}
+.calculate-form-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 30px;
+    margin-bottom: 26px;
+}
+.calculate-form-inputs .calculate-input:last-child {
+    grid-column: -1 / 1;
+}
+.calculate-table-wrapper {
+    max-width: 610px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.calculate-table-wrapper::after {
+    content: "";
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    background-color: var(--color-dark);
+    width: 100%;
+    z-index: -1;
+    translate: -50% -50%;
+}
+.calculate-table :is(thead, tfoot) {
+    color: var(--color-white);
+}
+.calculate-table thead th {
+    text-align: left;
+    padding-block: 18px;
+    text-transform: uppercase;
+}
+.calculate-table tbody td {
+    padding-block: 14px;
+}
+.calculate-table tfoot td {
+    padding-top: 30px;
+}
+.calculate-table :is(th, td) {
+    padding-right: 40px;
+}
+.calculate-table :is(th, td):not(:first-child) {
+    padding-left: 30px;
+    border-left: 1px solid var(--color-dark-gray);
+}
+.calculate-table tbody tr {
+    border-top: 1px solid var(--color-dark-gray);
+}
+
+.calculate-table tbody tr:last-child td:first-child {
+    position: relative;
+}
+.calculate-table tbody tr:last-child td:first-child::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-dark-gray);
+    height: 1px;
+    width: 65%;
+    right: 0;
+    bottom: 0;
 }
 
 @media (max-width: 1350px) {
@@ -532,7 +619,7 @@ button {
         margin-block: -30px;
     }
     .join-us-video-button {
-        height: clamp(100px, 16.7vw, 200px)
+        height: clamp(100px, 16.7vw, 200px);
     }
     .backdrop-title::before {
         height: 20px;
@@ -544,7 +631,7 @@ button {
         max-width: 100%;
     }
     .location-map {
-        height: clamp(320px, 34.5vw, 450px)
+        height: clamp(320px, 34.5vw, 450px);
     }
     .location-content {
         padding: 40px;
@@ -594,7 +681,8 @@ button {
     .location {
         flex-direction: column-reverse;
     }
-    .location-content, .location-map {
+    .location-content,
+    .location-map {
         flex-basis: unset;
     }
     .location-content {
@@ -635,6 +723,7 @@ button {
         padding-block: 65px;
     }
 }
+
 @media (max-width: 750px) {
     .motivation-card,
     .motivation-item:nth-child(even) .motivation-card {
