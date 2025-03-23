@@ -612,6 +612,9 @@ button {
         height: clamp(200px, 30vw, 479px);
         width: auto;
     }
+    .calculate-body {
+        max-width: 45%;
+    }
 }
 @media (max-width: 1200px) {
     .motivation-card img {
@@ -635,6 +638,15 @@ button {
     }
     .location-content {
         padding: 40px;
+    }
+    .calculate-table tbody td {
+        padding-block: 10px;
+    }
+    .calculate-table :is(th, td) {
+        padding-right: 20px;
+    }
+    .calculate-form-inputs {
+        gap: 18px;
     }
 }
 @media (max-width: 1000px) {
@@ -692,6 +704,32 @@ button {
         width: 100%;
         height: clamp(250px, 50vw, 600px);
     }
+    .calculate-table :is(th, td):not(:first-child) {
+        padding-left: 20px;
+    }
+    .calculate-body {
+        max-width: 40%;
+        padding-left: 30px;
+    }
+    .calculate-wrapper {
+        column-gap: 20px;
+    }
+    .calculate {
+        padding-block: 80px;
+    }
+    .calculate-form-inputs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .description-text {
+        margin-bottom: 25px;
+    }
+    .calculate-table {
+        font-size: 14px;
+    }
+    .calculate-table thead th {
+        padding-block: 10px;
+    }
 }
 @media (max-width: 900px) {
     .motivation-card img {
@@ -721,6 +759,24 @@ button {
     }
     .family-header {
         padding-block: 65px;
+    }
+    .calculate-wrapper {
+        flex-direction: column;
+    }
+    .calculate-body {
+        max-width: unset;
+    }
+    .calculate-table-wrapper {
+        max-width: unset;
+    }
+    .calculate-table {
+        width: 100%;
+    }
+    .calculate-table-wrapper::after {
+        display: none;
+    }
+    .calculate-form-inputs {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
