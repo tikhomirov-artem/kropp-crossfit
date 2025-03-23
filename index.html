@@ -307,8 +307,8 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer-main container">
-            <header class="footer-main-header">
+        <div class="footer-main">
+            <header class="footer-main-header container">
                 <img class="footer-logo" src="imgs/logo.png" alt="kropp-logo" width="270" height="50" loading="lazy">
                 <p class="footer-description">
                     please feel free to send us an e-mail at <a
@@ -316,7 +316,7 @@
                     inquiries
                 </p>
             </header>
-            <div class="footer-main-body">
+            <div class="footer-main-body container">
                 <div class="footer-column">
                     <h2 class="footer-column-title">About</h2>
                     <p>
@@ -337,21 +337,22 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h2 class="footer-column-title">Working hours</h2>
+                    <h2 class="footer-column-title">Location</h2>
                     <address class="footer-address">
-                        68 Jay Street, Brooklyn,
+                        68 Jay Street, Brooklyn, <br>
                         NY 11201, United States
                     </address>
                     <div class="footer-contacts">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a class="footer-contacts-link" href="mailto:kropp@qodeinteractive.com">kropp@qodeinteractive.com</a>
+                        <a class="footer-contacts-link" href="tel:+17184076400">+ (1) 718 - 407 - 6400</a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h2 class="footer-column-title">Working hours</h2>
+                    <h2 class="footer-column-title">Location</h2>
                     <form action="" class="footer-form">
-                        <input type="text" class="footer-form-input input">
-                        <button class="footer-form-button button"></button>
+                        <label for="footer-input-email" class="v-hidden">Email</label>
+                        <input name="email" id="footer-input-email" type="text" placeholder="Email" inputmode="email" class="footer-form-input input">
+                        <button class="footer-form-button button transparent"></button>
                     </form>
                     <div class="footer-socials">
                         <ul class="footer-socials-list">

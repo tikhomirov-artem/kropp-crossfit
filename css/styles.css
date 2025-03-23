@@ -209,7 +209,7 @@ button {
     margin-bottom: 0.4em;
 }
 
-.title-l + div {
+.title-l + div, .footer-description {
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -594,6 +594,62 @@ button {
     width: 65%;
     right: 0;
     bottom: 0;
+}
+
+/*СЕКЦИЯ FOOTER*/
+.footer {
+    color: var(--color-white);
+}
+.footer-main-header, .footer-main-body {
+    display: grid;
+    gap: 30px;
+}
+.footer-main-body {
+    grid-template-columns: 22.71% repeat(3, auto);
+}
+.footer-main-header {
+    grid-template-columns: 22.71% auto;
+    margin-bottom: clamp(20px, 3.12vw, 60px);
+}
+.footer-description {
+    text-align: left;
+}
+.footer-column-title {
+    font-size: 22px;
+    margin-bottom: 0.8em;
+    line-height: 1;
+}
+.footer-contacts-link {
+    font-size: inherit;
+    display: block;
+    text-decoration: unset;
+}
+.footer-schedule:not(:last-child), .footer-address:not(:last-child)  {
+    margin-bottom: 15px;
+}
+.footer-description {
+    max-width: 46.2em;
+}
+.footer-main {
+    background-color: var(--color-dark);
+    padding-block: 140px;
+}
+.footer-main .input {
+    border: none !important;
+}
+.footer-form {
+    display: flex;
+    border-radius: var(--btn-radius);
+    border: var(--border);
+    max-width: 302px;
+    margin-bottom: 50px;
+}
+.footer-form .button.footer-form-button {
+    padding-right: 0;
+    border: none;
+}
+.footer-bottom {
+    padding-block: 15px;
 }
 
 @media (max-width: 1350px) {
