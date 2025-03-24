@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -19,11 +20,11 @@
         </a>
         <nav class="header-menu">
             <ul class="header-menu-list d-flex">
-                <li class="header-menu-item"><a href="/" class="header-menu-link active">home</a></li>
-                <li class="header-menu-item"><a href="/" class="header-menu-link">pages</a></li>
-                <li class="header-menu-item"><a href="/" class="header-menu-link">portfolio</a></li>
-                <li class="header-menu-item"><a href="/" class="header-menu-link">blog</a></li>
-                <li class="header-menu-item"><a href="/" class="header-menu-link">shop</a></li>
+                <li class="header-menu-item"><a href="#home" class="header-menu-link active">home</a></li>
+                <li class="header-menu-item"><a href="#join-us" class="header-menu-link">join-us</a></li>
+                <li class="header-menu-item"><a href="#location" class="header-menu-link">locaion</a></li>
+                <li class="header-menu-item"><a href="#calculate" class="header-menu-link">calculate bmi</a></li>
+                <li class="header-menu-item"><a href="#gallery" class="header-menu-link">gallery</a></li>
             </ul>
         </nav>
         <div class="header-actions d-flex al-center">
@@ -40,7 +41,7 @@
     </header>
     <main>
         <h1 class="v-hidden">Cropp fitness club</h1>
-        <section class="welcome d-flex big-container">
+        <section id="home" class="welcome d-flex big-container">
             <h2 class="v-hidden">upcoming-events</h2>
             <div class="welcome-block">
                 <div class="welcome-info d-flex">
@@ -140,7 +141,7 @@
                 </ul>
             </div>
         </section>
-        <section class="join-us">
+        <section id="join-us" class="join-us">
             <div class="join-us-video-wrapper">
                 <div class="container">
                     <video src="" poster="./imgs/join-us/video-poster.jpg" height="600" width="960"
@@ -172,7 +173,7 @@
                 </form>
             </div>
         </section>
-        <section class="location">
+        <section id="location" class="location">
             <h2 class="v-hidden">Our locations</h2>
             <iframe class="location-map"
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A51ab91bd4eddb62ace8efb1d1c1a1155b52a8b2008a9ec436e48e49a5738d639&amp;source=constructor"
@@ -188,7 +189,7 @@
                 <a href="" class="location-button button transparent">View more</a>
             </div>
         </section>
-        <section class="family">
+        <section id="gallery" class="family">
             <header class="family-header container">
                 <h2 data-title="Part" class="family-title backdrop-title title-l center">
                     be a part of our fit family
@@ -239,7 +240,7 @@
                 </div>
             </div>
         </section>
-        <section class="calculate">
+        <section id="calculate" class="calculate">
             <div class="calculate-wrapper container">
                 <div class="calculate-body">
                     <h2 data-title="bmi" class="calculate-title backdrop-title title-m">
@@ -367,7 +368,7 @@
             </div>
         </div>
         <div class="footer-bottom container">
-            <p class="footer-bottom-text">© 2022 Qode Interactive, All Rights Reserved.</p>
+            <p class="footer-bottom-text">© 2025 Qode Interactive, All Rights Reserved.</p>
         </div>
     </footer>
     <script src="./js/slider.js"></script>

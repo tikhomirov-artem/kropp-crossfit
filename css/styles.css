@@ -632,13 +632,15 @@ button {
 }
 .footer-main {
     background-color: var(--color-dark);
-    padding-block: 140px;
+    padding-block: clamp(80px, 7.3vw, 140px);
 }
 .footer-main .input {
     border: none !important;
+    max-width: 83%;
 }
 .footer-form {
     display: flex;
+    justify-content: space-between;
     border-radius: var(--btn-radius);
     border: var(--border);
     max-width: 302px;
@@ -786,6 +788,17 @@ button {
     .calculate-table thead th {
         padding-block: 10px;
     }
+    .footer-description {
+        font-size: 16px;
+    }
+    .footer-main-body {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        gap: 60px 40px;
+    }
+    .footer-main-header {
+        margin-bottom: clamp(20px, 9vw, 100px);
+    }
 }
 @media (max-width: 900px) {
     .motivation-card img {
@@ -818,9 +831,23 @@ button {
     }
     .calculate-wrapper {
         flex-direction: column;
+        row-gap: 40px;
     }
     .calculate-body {
         max-width: unset;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .calculate-title {
+        text-align: center;
+        display: inline-flex;
+        align-self: center;
+    }
+    .calculate-title::after {
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
     }
     .calculate-table-wrapper {
         max-width: unset;
@@ -856,6 +883,23 @@ button {
     .training-types-item-img {
         --icon-size: clamp(45px, calc((80 / 1920 * 100) * 1vw), 80px);
     }
+    .footer-logo {
+        max-width: 180px;
+    }
+    .footer-main-header {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-main-body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .footer-form {
+        margin-bottom: 0;
+    }
+    .footer-schedule:not(:last-child), .footer-address:not(:last-child) {
+        margin-bottom: 10px;
+    }
 }
 @media (max-width: 450px) {
     .training-types-list {
@@ -871,9 +915,20 @@ button {
     }
     .welcome {
         padding-inline: 15px;
-        padding-bottom: 7vh;
+        padding-bottom: 15vh;
     }
     .join-us-form-button {
         width: 100%;
+    }
+    .calculate-table-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+    .footer-column-title {
+        font-size: 18px;
+    }
+    .calculate-table {
+        width: 100%;
+        max-width: 100%;
     }
 }
